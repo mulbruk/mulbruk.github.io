@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WiiWare Web Patcher</title>
+  <link rel="stylesheet" href="wiiware-patcher/style.css">
+</head>
+<body>
+  <main>
+    <h1>WiiWare Web Patcher</h1>
+
+    <div class="form">
+      <div class="field">
+        <label for="source-wad">Source WAD</label>
+        <input type="file" id="source-wad" accept=".wad" autocomplete="off">
+        <div class="hash-info" id="source-hashes">
+          <span class="hash-row"><span class="hash-label">CRC32:</span> <span class="hash-value" id="source-crc32">&nbsp;</span></span>
+          <span class="hash-row"><span class="hash-label">SHA-1:</span> <span class="hash-value" id="source-sha1">&nbsp;</span></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="patch-file">Patch File (.wwpf)</label>
+        <input type="file" id="patch-file" accept=".wwpf" autocomplete="off">
+        <div class="hash-info" id="patch-hashes">
+          <span class="hash-row"><span class="hash-label">Required CRC32:</span> <span class="hash-value" id="patch-source-crc32">&nbsp;</span></span>
+        </div>
+      </div>
+
+      <button id="apply-btn" disabled autocomplete="off">Apply Patch</button>
+
+      <p id="status" class="status hidden"></p>
+    </div>
+  </main>
+
+  <script type="module" src="wiiware-patcher/app.js"></script>
+</body>
+</html>
